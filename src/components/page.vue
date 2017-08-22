@@ -4,17 +4,12 @@
     <div id="example"> 
         <div id="listView"></div> 
         <div id="pager" class="k-pager-wrap"></div> 
-      </div> 
+    </div> 
   </div>
-  <p class="p1">
-      <router-link to="/foo">go to foo</router-link>&nbsp;&nbsp;&nbsp;
-      <router-link to="/bar">go to bar</router-link>  
-  </p>
-
-  <script type="text/x-kendo-template" id="template">
+  <script type="text/x-kendo-template"  id="template">
         <div class="product">
             <img src="/static/img/foods/#= ProductID #.jpg" alt="#: ProductName # image" />
-            <h3>#:ProductName#</h3>
+            <h3>{{products[0].ProductName}}</h3>
             <p>#= ProductID #</p>
         </div>
     </script>
@@ -22,7 +17,8 @@
 </template>
 
 <script type="text/javascript">
-  $(function() {
+
+$(function() {
         var dataSource = new kendo.data.DataSource({
             data: products,
             pageSize: 21
@@ -38,10 +34,24 @@
         });
     });
 
+
+import axios from 'axios';
   export default {
-
+        data(){
+            return {
+             products:[]
+            }
+        },
+        methods:{
+            show(){
+            
+            }
+        },
+        created(){ 
+            this.products=products;
+            console.log(products);
+        }
   }
-
 </script>
 <style>
 @import '/static/style/examples-offline.css';
