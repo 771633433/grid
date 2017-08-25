@@ -2,6 +2,8 @@
 
 > A Vue.js project
 
+![Alt text](https://github.com/771633433/page2/raw/master/1.PNG)
+
 ## Build Setup
 
 ``` bash
